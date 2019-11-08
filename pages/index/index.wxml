@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="wrapper">
+  <view class="chunk chunk1">1</view>
+  <view class="chunk chunk2">2</view>
+  <view class="chunk chunk3">3</view>
+</view>
