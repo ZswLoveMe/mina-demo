@@ -1,0 +1,13 @@
+<!-- components/epsoide/epsoide.wxml -->
+<wxs src="./fillterIndex.wxs" module="fillterIndex" />
+<view class="container">
+  <view class="left-wrapper">
+    <text>No.</text>
+    <text>{{fillterIndex.currentIndex(index)}}</text>
+    <text class="line"></text>
+  </view>
+  <view class="right-wrapper">
+    <text>{{year}}</text>
+    <text>{{month}}</text>
+  </view>
+</view>

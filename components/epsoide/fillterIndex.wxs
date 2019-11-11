@@ -1,0 +1,7 @@
+var currentIndex = function (val) {
+  return val > 10 ? val : "0"+val
+}
+
+module.exports  = {
+  currentIndex: currentIndex
+}
