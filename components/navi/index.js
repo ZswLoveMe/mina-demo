@@ -24,13 +24,13 @@ Component({
    */
   methods: {
     onLeft(ev){
-      if(this.properties.first){
+      if (this.properties.latest){
         return
       }
       this.triggerEvent('left',{},{})
     },
     onRight(ev){
-      if(this.properties.latest){
+      if (this.properties.first){
         return
       }
       this.triggerEvent('right',{},{})

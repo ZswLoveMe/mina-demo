@@ -6,4 +6,7 @@ let classicBeh = Behavior({
     imgSrc:  String,
      content: String
   },
-})
+})  
+export {
+  classicBeh
+}

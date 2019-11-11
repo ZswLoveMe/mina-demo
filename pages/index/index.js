@@ -16,8 +16,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    first: true,
-    latest: false
+    first: false ,
+    latest: true
   },
 
   /**
@@ -42,8 +42,15 @@ Page({
     )
   },
 
-  onRight: function (ev) {
-    console.log(ev)
+  onRight:  function (ev) {
+    let {index} = this.data.classicData
+      classic.getPrevious(index).then(res =>{
+        this.setData({
+          classicData:res,
+          latest: classic.isLatest(res.index),
+          first: classic.isFirst(res.index)
+        })
+})
 
   },
   onLeft: function (ev) {
