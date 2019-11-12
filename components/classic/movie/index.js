@@ -6,6 +6,7 @@ Component({
    */
   behaviors:[classicBeh],
 
+
   /**
    * 组件的初始数据
    */

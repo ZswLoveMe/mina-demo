@@ -1,7 +1,7 @@
 <!-- components/classic/music/index.wxml -->
-<view>
+<view hidden="{{hidden}}" class="classic-wraooer">
     <image src="{{imgSrc}}" />
-    <image src="{{playSrc}}" />
+    <image bind:tap="onplay" src="{{playing?pauseSrc:playSrc}}" />
     <image src="./images/music@tag.png" /> 
     <text>
         {{content}}

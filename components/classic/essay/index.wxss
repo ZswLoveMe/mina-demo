@@ -1,24 +1,2 @@
 /* components/classic/essay/index.wxss */
-.classic-wraooer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.classic-wraooer > image:nth-child(1) {
-  width: 750rpx;
-  height: 500rpx;
-}
-.classic-wraooer > image:nth-child(2) {
-  width: 46rpx;
-  height: 142rpx;
-  position: relative;
-  bottom: 58rpx;
-  right: 310rpx;
-}
-.classic-wraooer > text{
-  display: block;
-  max-width: 550rpx;
-  font-size: 36rpx;
-
-}
+@import '../common.wxss' 

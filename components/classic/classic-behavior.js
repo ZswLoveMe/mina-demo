@@ -4,7 +4,8 @@ let classicBeh = Behavior({
  */
   properties: {
     imgSrc:  String,
-     content: String
+    content: String,
+    hidden:Boolean
   },
 })  
 export {

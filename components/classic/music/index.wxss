@@ -6,15 +6,23 @@
 }
 
 .classic-wraooer > image:nth-child(1) {
-  width: 750rpx;
-  height: 500rpx;
+  width: 422rpx;
+  height: 422rpx;
+  margin-top: 60rpx;
+  border-radius: 50%;
 }
 .classic-wraooer > image:nth-child(2) {
-  width: 46rpx;
-  height: 142rpx;
+  width: 120rpx;
+  height: 120rpx;
   position: relative;
-  bottom: 58rpx;
-  right: 310rpx;
+  bottom: 270rpx;
+}
+.classic-wraooer > image:nth-child(3) {
+    width: 46rpx;
+    height: 142rpx;
+    position: relative;
+    bottom: 58rpx;
+    right: 310rpx;
 }
 .classic-wraooer > text{
   display: block;
