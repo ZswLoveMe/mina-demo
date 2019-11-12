@@ -19,4 +19,20 @@ export class LikeModel extends HTTP {
             }
         })
     }
+    
+  getClassicLikeStatus(artId, category) {
+      return new Promise((resolve,reject) =>{
+        let url = "classic/"+category+"/"+artId+'/favor' 
+        this.request({
+          url: url,
+          success: (res) => {
+            resolve(res)
+          },
+          err: (err) => {
+            reject(err)
+          }
+        })
+      })
+  }
+    
 }
