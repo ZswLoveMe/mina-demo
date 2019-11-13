@@ -23,14 +23,20 @@ Component({
     pauseSrc:'./images/player@pause.png',
     playSrc:'./images/player@play.png'
   },
-
+  attached: function() {
+    // 在组件实例进入页面节点树时执行
+    this._recoverStatus()
+    this._monitorSwitch()
+  },
+  detached: function() {
+    // 在组件实例被从页面节点树移除时执行
+  },
   /**
    * 组件的方法列表
    */
   methods: {
     onplay:function(){
       let playing = this.data.playing
-      console.log(this.properties.src)
       if(!playing){
         this.setData({
           playing:!playing
@@ -43,7 +49,34 @@ Component({
         })
         mMgr.pause()
       }
-    
+    },
+    /* 恢复状态 */
+    _recoverStatus(){
+        if(mMgr.paused){
+          this.setData({
+            playing:false
+          })
+          return
+        }
+        if(mMgr.src === this.properties.src){
+          this.setData({
+            playing:true
+          })
+        }
+    },
+    _monitorSwitch:function(){
+      mMgr.onPlay(()=>{
+          this._recoverStatus()
+      })
+      mMgr.onPause(()=>{
+          this._recoverStatus()
+      })
+      mMgr.onStop(()=>{
+          this._recoverStatus()
+      })
+      mMgr.onEnded(()=>{
+          this._recoverStatus()
+      })
 
     }
   }

@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/book/book"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -11,5 +11,29 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "requiredBackgroundModes":["audio"]
+  "requiredBackgroundModes":["audio"],
+  "tabBar": {
+    "selectedColor":"#000000",
+    "backgroundColor": "#ffffff",
+    "color": "#c7c7c7",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "流行",
+      "iconPath": "images/tab/classic.png",
+      "selectedIconPath": "images/tab/classic@highlight.png"
+    },
+    {
+      "pagePath": "pages/book/book",
+      "text": "书籍",
+      "iconPath": "images/tab/book.png",
+      "selectedIconPath": "images/tab/book@highlight.png"
+    },
+    {
+      "pagePath": "pages/index/index",
+      "text": "喜欢",
+      "iconPath": "images/tab/my.png",
+      "selectedIconPath": "images/tab/my@highlight.png"
+    }
+    ]
+  }
 }

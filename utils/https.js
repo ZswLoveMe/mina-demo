@@ -34,6 +34,35 @@ export class HTTP{
       }
   })
   }
+  postOrGet({url,data ={},method ="GET"}){
+      return new Promise((resolve,reject) => {
+          this._request(url,data,method,resolve,reject)
+      })
+  }
+  _request(url,data ={},method ="GET",resolve,reject){
+    wx.request({
+      url: config.api_base_url+url,
+      method:method,
+      header:{
+        "appkey": config.appKey,
+        "content-Type":"application/json"
+      },
+      data:data,
+      success:(res)=> {
+        let code = res.statusCode.toString()
+        if(code.startsWith("2")){
+          resolve(res.data);
+        } else{
+          let errCode = res.data.error_code
+          this._show_error(errCode)
+        }  
+      },
+      fail:(err) => {
+        reject(err)
+        this._show_error()
+      }
+  })
+  }
   _show_error(error_code = 1){
     wx.showToast({
       title: tips[error_code],
