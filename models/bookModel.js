@@ -6,6 +6,15 @@ import { HTTP} from '../utils/https.js'
     getBookCount(){
         return this.postOrGet({url:'book/favor/count'})
     }
+    getBookDetail(id){
+        return this.postOrGet({url:`book/${id}/detail`})
+    }
+    getBookFavor(id){
+        return this.postOrGet({url:`book/${id}/favor`})   
+    }
+    getBookComment(id){
+        return this.postOrGet({url:`book/${id}/short_comment`})   
+    }
 }
 export {
     BookModel
