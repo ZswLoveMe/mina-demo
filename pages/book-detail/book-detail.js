@@ -10,7 +10,7 @@ Page({
    */
   data: {
     comments:[],
-    detail:null,
+    book:null,
     likeStatus:false,
     likeCount:0
   },
@@ -20,12 +20,13 @@ Page({
    */
   onLoad:  function (options) {
     let bid = options.bid
+    console.log(bid)
     let detail = bookModel.getBookDetail(bid)
     let comments = bookModel.getBookComment(bid)
     let likeStatus = bookModel.getBookFavor(bid)
     detail.then(res =>{
       this.setData({
-        detail:res
+        book:res
       })
     })
     comments.then(res =>{
