@@ -11,7 +11,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bookList:[]
+    bookList:[],
+    searching:false,
   },
 
   /**
@@ -24,7 +25,18 @@ Page({
       })
     })
   },
-
+  openSearch:function(ev){
+    console.log(ev)
+    this.setData({
+      searching:true
+    })
+  },
+  onCancel:function(ev){
+    console.log(ev)
+    this.setData({
+      searching:false
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

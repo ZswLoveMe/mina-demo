@@ -15,6 +15,16 @@ import { HTTP} from '../utils/https.js'
     getBookComment(id){
         return this.postOrGet({url:`book/${id}/short_comment`})   
     }
+    postComment(id,comment){
+        return this.postOrGet({
+            url:'book/add/short_comment',
+            method:'POST',
+            data:{
+                book_id:id,
+                content:comment
+            }
+        })
+    }
 }
 export {
     BookModel
