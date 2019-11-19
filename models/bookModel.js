@@ -25,6 +25,15 @@ import { HTTP} from '../utils/https.js'
             }
         })
     }
+    search(start, q){
+        return this.postOrGet({
+            url:'book/search?summary=1',
+            data:{
+                q:q,
+                start:start
+            }
+        })
+    }
 }
 export {
     BookModel

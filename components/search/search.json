@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "z-tag":"../tag/tag",
+    "z-book":"../book/index"
+  }
 }
