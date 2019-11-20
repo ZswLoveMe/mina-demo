@@ -2,6 +2,7 @@
   "component": true,
   "usingComponents": {
     "z-tag":"../tag/tag",
-    "z-book":"../book/index"
+    "z-book":"../book/index",
+    "z-loading":"../loading/index"
   }
 }

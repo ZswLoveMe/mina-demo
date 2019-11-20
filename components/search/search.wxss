@@ -140,6 +140,7 @@
 .bar {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    margin-right: 18rpx;
     display: inline-block;
     height: 68rpx;
     width: 500rpx;

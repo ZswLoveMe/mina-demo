@@ -5,7 +5,7 @@ export class keywordModel extends HTTP {
     key = 'q'
     maxLength = 10
     getHistory() {
-        return wx.getStorageSync('q');
+      return wx.getStorageSync(this.key);
     }
 
     getHot() {
@@ -24,6 +24,13 @@ export class keywordModel extends HTTP {
             }
             words.unshift(keyWord)
             wx.setStorageSync(this.key, words);
+        }else{
+          var postion = words.indexOf(keyWord)
+          console.log(postion)
+          var tmp = words[0]
+          words[0] = keyWord
+          words[postion] = tmp
+          wx.setStorageSync(this.key, words);
         }
     }
 }

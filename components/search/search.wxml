@@ -1,12 +1,12 @@
 <!--components/search/search.wxml-->
 <view class="container">
     <view class="header">
-        <view class="search-container">
+        <view class="search-container" >
             <image class="icon" src="images/search.png" />
             <input value="{{query}}" placeholder-class='query' bindinput="inputEdit" placeholder='书籍名' bindconfirm="onConfirm" class='bar' auto-focus="true" confirm-type="search"/>
             <image class="cancel-img" src="images/cancel.png" bind:tap="onClear" />
         </view>
-        <view  class='cancel'  bind:tap="onCancel" >取消</view>
+        <view  class='cancel'  bind:tap="onCancel"  >取消</view>
     </view>
     <view wx:if="{{!searching}}" >
         <view class="history">
@@ -16,7 +16,7 @@
             </view>
             <view class="tags">
                 <block wx:for="{{historyWords}}" wx:key="{{index}}">
-                    <z-tag text="{{item}}"></z-tag>
+                    <z-tag text="{{item}}" bind:tapping="onConfirm"></z-tag>
                 </block>
             </view>
         </view>
@@ -27,7 +27,7 @@
             </view>
             <view class="tags">
              <block wx:for="{{hotWords}}" wx:key="{{index}}">
-                    <z-tag text="{{item}}"></z-tag> 
+                    <z-tag text="{{item}}"  bind:tapping="onConfirm"></z-tag> 
                 </block>
             </view>
         </view>
@@ -37,7 +37,7 @@
             <z-book  book="{{item}}" class="book" />
         </block>
     </view>
-  <!--   <v-loading class="loading-center"/>
-    <v-loading class="loading" wx:if="{{loading}}"/>
-    <text wx:if="{{noneResult}}" class="empty-tip">没有搜索到书籍</text> -->
+   <z-loading class="loading-center" wx:if="{{loadingCenter}}"/>
+   <z-loading class="loading" wx:if="{{loading}}"/>
+   <text wx:if="{{nonResult}}" class="empty-tip">没有搜索到书籍</text>
 </view> 
